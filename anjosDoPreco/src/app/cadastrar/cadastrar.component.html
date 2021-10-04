@@ -10,13 +10,13 @@
             
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" id="nome"
+                <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome" id="nome"
                 placeholder="Insira seu nome completo">
             </div>
 
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" class="form-control" name="usuario" id="usuario"
+                <input [(ngModel)]='usuario.usuario' type="text" class="form-control" name="usuario" id="usuario"
                 placeholder="Insira o nome de usuário desejado">
             </div>
 
@@ -28,13 +28,13 @@
 
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input type="password" class="form-control" name="senha" id="senha"
+                <input (input)='confirmeSenha($event)' type="password" class="form-control" name="senha" id="senha"
                 placeholder="Insira uma senha segura">
             </div>
 
             <div class="form-group">
                 <label for="confirmaSenha">Confirme sua senha</label>
-                <input type="password" class="form-control" name="confirmaSenha" 
+                <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmaSenha" 
                 id="confirmaSenha"
                 placeholder="Confirme sua senha">
             </div>
@@ -42,7 +42,7 @@
             <div class="d-flex justify-content-center mb-2">
                 <a routerLink = '/entrar'><button type="submit" class="btn btn-danger mr-4"> 
                 Cancelar</button></a>
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+                <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
             </div>
 
         </div>
