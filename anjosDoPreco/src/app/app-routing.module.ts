@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
-import { HeaderFooterComponent } from './header-footer/header-footer.component';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'entrar', pathMatch: 'full'},
+
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'entrar', component: EntrarComponent},
-  {path: 'header-footer', component: HeaderFooterComponent},
-  {path: '', redirectTo: 'header-footer', pathMatch: 'full'}
+  {path: 'index', component: IndexComponent}
 ];
 
 @NgModule({

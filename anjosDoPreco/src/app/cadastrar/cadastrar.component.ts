@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserLogin } from '../model/UserLogin';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
@@ -10,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario
+  usuario: Usuario =new Usuario
   confirmarSenha: string
 
 
@@ -20,7 +21,7 @@ export class CadastrarComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  confrimeSenha(event: any){
+  confirmeSenha(event: any){
     this.confirmarSenha = event.target.value 
   } 
 
