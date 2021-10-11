@@ -5,7 +5,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'entrar', pathMatch: 'full'},
+  {path: '', redirectTo: 'index', pathMatch: 'full'},
 
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'entrar', component: EntrarComponent},

@@ -1,55 +1,86 @@
-<nav class="navbar navbar-light bg-primary">
-    <!--Logo-->
-    <a class="navbar-brand" href="#">
-    <img src="../../assets/img/money.png" width="110" height="116" alt="">
-    </a>
-
-    <!--Barra de Pesquisa-->
-    
-    <form class="form-inline mr-auto ml-auto">
-        <fieldset>
-            <legend class="display-4 mb-4 scheduler-border text-center">Anjos do Preço</legend>
-            <input class="form-control mr-auto ml-auto " type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-info ml-2 my-2 my-sm-0" type="submit">Pesquisar</button>
-       </fieldset>
-    </form>
-
-    <!--Login-->
-    <div class="row">
-        <div class="col-6">
-            <button class="btn btn-info"><a routerLink = '/entrar' class="text-dark">Entrar</a></button>
+<div class="container-fluid">
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand logo" href="#">ADP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon c"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="container-fluid navbar-nav d-flex justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link bts ml-1 mr-1" href="#">Registrar <i class="fas fa-user-plus"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bts ml-1 mr-1" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                </ul>
         </div>
-        <div class="col-6 ">
-            <a><i class="fas fa-user" style="font-size: 40px;"></i></a>
-            
+    </nav>
+</div>
+
+<div class="banner container-fluid pt-5 pb-5 ">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-12 d-flex justify-content-center container">
+                <div class="mb-3 border-r img-fluid">
+                   <img src="../../assets/img/Productc.png" alt="" width="200px" height="200px">
+                </div>
+                <div class="mb-3 border-r img-fluid">
+                    <img src="../../assets/img/money.png" alt="" width="200px" height="200px">
+                </div>
+                <div class="mb-3 border-r img-fluid">
+                    <img src="../../assets/img/Product.png" alt="" width="200px" height="200px">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-sm-2">
+                <div>
+                    <h1></h1>
+                </div>
+            </div>
+
+            <div class="col-sm-8 d-flex justify-content-center">
+                <div class="back mb-3">
+                    <h1 class="fs-100 ff-b d-flex justify-content-center mt-2 text-white text-center font-weight-bolder">Anjos Do Preço</h1>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 d-flex justify-content-center">
+                <div class="mt-2">
+                   
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-warning">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-        <ul class="navbar-nav ml-auto mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Categoria A</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Categoria B</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Categoria C</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Categoria D</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nós</a>
-        </li>
-        </ul>
-
-    </div>
-</nav>
+<div class="container-fluid background">
+        <ul class="nav justify-content-center pb-1 pt-1 mb-1  ff-b">
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-utensils f-color"></i> &nbsp; Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-gamepad f-color"></i> &nbsp;Categoria A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-tv f-color"></i> &nbsp; Categoria B</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-book f-color"></i> &nbsp; Categoria C</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-mobile f-color"></i> &nbsp; Categoria D</a>
+            </li>
+          </ul>
+</div>

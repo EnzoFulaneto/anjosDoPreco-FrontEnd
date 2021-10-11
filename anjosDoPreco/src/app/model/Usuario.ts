@@ -6,4 +6,5 @@ export class Usuario{
     public nome: string
     public senha: string 
     public usuario: string
+    public documento: string
 }
