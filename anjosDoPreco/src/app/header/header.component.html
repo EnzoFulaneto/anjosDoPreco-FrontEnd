@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="container-fluid navbar-nav d-flex justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link bts ml-1 mr-1" href="#">Registrar <i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link bts ml-1 mr-1" href="#">Cadastrar<i class="fas fa-user-plus"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bts ml-1 mr-1" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
+                        <a class="nav-link bts ml-1 mr-1" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
                     </li>
                 </ul>
         </div>
@@ -22,13 +22,13 @@
         <div class="row justify-content-center ">
             <div class="col-sm-12 d-flex justify-content-center container">
                 <div class="mb-3 border-r img-fluid">
-                   <img src="../../assets/img/Productc.png" alt="" width="200px" height="200px">
+                   <img src="../../assets/img/Product.png" alt="" width="200px" height="200px">
                 </div>
                 <div class="mb-3 border-r img-fluid">
                     <img src="../../assets/img/money.png" alt="" width="200px" height="200px">
                 </div>
                 <div class="mb-3 border-r img-fluid">
-                    <img src="../../assets/img/Product.png" alt="" width="200px" height="200px">
+                    <img src="../../assets/img/Productc.png" alt="" width="200px" height="200px">
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
             </div>
 
             <div class="col-sm-8 d-flex justify-content-center">
-                <div class="back mb-3">
-                    <h1 class="fs-100 ff-b d-flex justify-content-center mt-2 text-white text-center font-weight-bolder">Anjos Do Preço</h1>
+                <div class=" mb-3">
+                    <h1 class="f-titulo fs-100 ff-b d-flex justify-content-center mt-2 text-white text-center font-weight-bolder">Anjos Do Preço</h1>
                 </div>
             </div>
 
@@ -84,3 +84,45 @@
             </li>
           </ul>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bd-radius">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="text-center modal-title">Entrar <i class="fas fa-sign-in-alt"></i></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-dark text-light d-flex justify-content-center">
+                
+                <form>
+                    <div class="">
+                        
+                        <div class="form-group">
+                            <label for="usuario">Usuario</label>
+                            <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario"
+                                placeholder="Seu usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha"
+                            placeholder="Sua senha">
+                        </div>
+                        
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success ml-1" (click)='entrar()'>Entrar</button>
+                        </div>
+                        
+                        <hr class="mt-5 mb-5">
+
+                        <p class="text-center">Não tem uma conta?
+                        <a routerLink = '/cadastrar'>Cadastre-se</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>        
+</div>
+

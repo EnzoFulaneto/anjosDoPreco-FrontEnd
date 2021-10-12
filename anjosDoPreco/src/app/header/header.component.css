@@ -37,6 +37,15 @@ ul li a:hover
 }
 /*Fim - Buttons*/
 
+/*Entrar - Login - Modal*/
+.bd-radius{
+    border-radius:100%;
+}
+
+
+
+
+
 /*Alterando Banner Principal*/
 .banner
 {
@@ -55,7 +64,6 @@ ul li a:hover
 {
     background-color: #7f5a83;
     background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-    border: 2px solid black;
     border-radius: 30px;
     height: 50px;
     width: 250px;
@@ -88,6 +96,11 @@ ul li a:hover
 }
 .f-color{
     color: #DAF0EE;
+}
+.f-titulo{
+    background: -webkit-linear-gradient(#9795ef, #f9c5d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 
