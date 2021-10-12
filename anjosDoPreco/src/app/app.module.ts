@@ -11,6 +11,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './main/main.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     CadastrarComponent,
     IndexComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
