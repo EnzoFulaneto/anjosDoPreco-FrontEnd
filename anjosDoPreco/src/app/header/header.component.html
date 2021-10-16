@@ -69,8 +69,8 @@
 
 
 
-        <!-- Botão para acionar modal -->
-        <button *ngIf='auth.adm()' type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaCategoria">
+        <!-- Botão para acionar modal *ngIf='auth.adm()' -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaCategoria">
         Cadastrar nova categoria
         </button>
                 </div>
@@ -193,7 +193,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+          <h5 class="modal-title" id="TituloModalCentralizado">Categorias novas</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -202,13 +202,13 @@
           
             <div class="form-group">
                 <label for="categoria">Insira um nome para a categoria</label>
-                <input type="text" class="form-control" placeholder="Ex: Categoria A">
+                <input [(ngModel)]='categoria.categoria' type="text" class="form-control" placeholder="Ex: Categoria A">
             </div>
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary">Salvar mudanças</button>
+          <button (click)='cadastrarCategoria()' type="button" class="btn btn-primary">Adicionar categoria</button>
         </div>
       </div>
     </div>

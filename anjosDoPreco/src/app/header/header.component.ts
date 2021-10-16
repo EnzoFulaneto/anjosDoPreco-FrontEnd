@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { CategoriaModel } from '../model/CategoriaModel';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +14,13 @@ import { AuthService } from '../service/auth.service';
 export class HeaderComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin
+  categoria: CategoriaModel = new CategoriaModel()
+  listaCategoria: CategoriaModel[]
 
   constructor(
     public auth: AuthService,
-    private router: Router
+    private router: Router,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
@@ -36,6 +41,13 @@ export class HeaderComponent implements OnInit {
       if (erro.status == 500){
         alert('Usuário ou senha estão incorretos :(')
       }
+    })
+  }
+
+  cadastrarCategoria(){
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: CategoriaModel)=>{
+      this.categoria = resp
+      alert ("Categoria adicionada com sucesso!")
     })
   }
   
