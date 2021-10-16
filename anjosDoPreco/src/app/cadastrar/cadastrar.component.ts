@@ -25,6 +25,10 @@ export class CadastrarComponent implements OnInit {
     this.confirmarSenha = event.target.value 
   } 
 
+  tipoUser(event: any){
+    this.tipoUser = event.target.value
+  }
+
   cadastrar(){
     if(this.usuario.senha != this.confirmarSenha)
     {

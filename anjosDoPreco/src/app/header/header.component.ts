@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   userLogin: UserLogin = new UserLogin
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router
   ) { }
 

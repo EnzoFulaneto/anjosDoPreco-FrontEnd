@@ -4,10 +4,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon c"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="container-fluid navbar-nav d-flex justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link bts ml-1 mr-1" href="#">Cadastrar<i class="fas fa-user-plus"></i></a>
+                        <a routerLink='/cadastrar' href="#" class="nav-link bts ml-1 mr-1">Cadastrar<i class="fas fa-user-plus ml-1"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link bts ml-1 mr-1" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
@@ -59,6 +60,19 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="mt-2">
                    
+            
+        <!-- Botão para acionar modal *ngIf='auth.adm()'-->
+        
+        <button  type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#novoProduto">
+        Cadastrar novo produto
+        </button>
+
+
+
+        <!-- Botão para acionar modal -->
+        <button *ngIf='auth.adm()' type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaCategoria">
+        Cadastrar nova categoria
+        </button>
                 </div>
             </div>
         </div>
@@ -84,6 +98,8 @@
             </li>
           </ul>
 </div>
+
+<!-- MODAL Entrar-->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -125,4 +141,76 @@
         </div>
     </div>        
 </div>
+
+  <!-- Modal  PRODUTO-->
+  <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de produtos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Insira o nome do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="text" class="form-control" id="foto" placeholder="Insira o link da foto">
+            </div>
+            
+            <div class="form-group">
+                <label for="preço">Preço</label>
+                <input type="number" class="form-control" id="preço" placeholder="Insira o preço do produto em R$">
+            </div>
+
+            <div class="form-group">
+                <label for="produto">Categoria</label>
+                <select name="categoria" id="categoria" placeholder="Escolha uma categoria" class="form-control">
+                    <option value=""></option>
+                </select>
+            </div>
+            
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-primary">Cadastrar Produto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  
+  <!-- Modal CATEGORIA -->
+  <div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="form-group">
+                <label for="categoria">Insira um nome para a categoria</label>
+                <input type="text" class="form-control" placeholder="Ex: Categoria A">
+            </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar mudanças</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
