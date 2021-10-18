@@ -12,6 +12,8 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlimentosComponent } from './categorias/alimentos/alimentos.component';
+import { LogadoComponent } from './logado/logado.component';
+import { FooterlogadoComponent } from './footerlogado/footerlogado.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AlimentosComponent } from './categorias/alimentos/alimentos.component';
     IndexComponent,
     HeaderComponent,
     FooterComponent,
-    AlimentosComponent
+    AlimentosComponent,
+    LogadoComponent,
+    FooterlogadoComponent
   ],
   imports: [
     BrowserModule,
