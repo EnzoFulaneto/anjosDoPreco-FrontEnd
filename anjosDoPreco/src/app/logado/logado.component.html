@@ -1,1 +1,216 @@
-<p>logado works!</p>
+<div class="container-fluid">
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand logo" href="#">ADP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon c"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="container-fluid navbar-nav d-flex justify-content-end">
+                    <li class="nav-item">
+                        <a routerLink='/cadastrar' class="nav-link bts ml-1 mr-1" >Cadastrar<i class="fas fa-user-plus"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bts ml-1 mr-1" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="banner container-fluid pt-5 pb-5 ">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-sm-12 d-flex justify-content-center container">
+                <div class="mb-3 border-r img-fluid">
+                   <img src="../../assets/img/Product.png" alt="" width="200px" height="200px">
+                </div>
+                <div class="mb-3 border-r img-fluid">
+                    <img src="../../assets/img/money.png" alt="" width="200px" height="200px">
+                </div>
+                <div class="mb-3 border-r img-fluid">
+                    <img src="../../assets/img/Productc.png" alt="" width="200px" height="200px">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-sm-2">
+                <div>
+                    <h1></h1>
+                </div>
+            </div>
+
+            <div class="col-sm-8 d-flex justify-content-center">
+                <div class=" mb-3">
+                    <h1 class="f-titulo fs-100 ff-b d-flex justify-content-center mt-2 text-white text-center font-weight-bolder">Anjos Do Preço</h1>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 d-flex justify-content-center">
+                <div class="mt-2">
+                   
+            
+        <!-- Botão para acionar modal *ngIf='auth.adm()'-->
+        
+        <button  type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#novoProduto">
+        Cadastrar novo produto
+        </button>
+
+
+
+        <!-- Botão para acionar modal *ngIf='auth.adm()' -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaCategoria">
+        Cadastrar nova categoria
+        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background">
+        <ul class="nav justify-content-center pb-1 pt-1 mb-1  ff-b">
+            <li class="nav-item">
+              <a [routerLink]="['/alimentos']" class="nav-link fs-25" href="#"><i class="fas fa-utensils f-color"></i> &nbsp; Alimentos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-25" href="#"><i class="fas fa-tv f-color"></i> &nbsp; Eletrodomesticos</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-gamepad f-color"></i> &nbsp;Jogos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-mobile f-color"></i> &nbsp;Celulares</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link fs-25" href="#"><i class="fas fa-book f-color"></i> &nbsp;Sobre nós</a>
+            </li>
+          </ul>
+</div>
+
+<!-- MODAL Entrar-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bd-radius">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="text-center modal-title">Entrar <i class="fas fa-sign-in-alt"></i></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-dark text-light d-flex justify-content-center">
+                
+                <form>
+                    <div class="">
+                        
+                        <div class="form-group">
+                            <label for="usuario">Usuario</label>
+                            <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario"
+                                placeholder="Seu usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha"
+                            placeholder="Sua senha">
+                        </div>
+                        
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success ml-1" (click)='entrar()'>Entrar</button>
+                        </div>
+                        
+                        <hr class="mt-5 mb-5">
+
+                        <p class="text-center">Não tem uma conta?
+                        <a routerLink = '/cadastrar'>Cadastre-se</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>        
+</div>
+
+  <!-- Modal  PRODUTO-->
+  <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de produtos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <input [(ngModel)]='produto.produto' type="text" class="form-control" id="titulo" placeholder="Insira o nome do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input [(ngModel)]='produto.foto' type="text" class="form-control" id="foto" placeholder="Insira o link da foto">
+            </div>
+            
+            <div class="form-group">
+                <label for="preço">Preço</label>
+                <input [(ngModel)]='produto.preco ' type="number" class="form-control" id="preço" placeholder="Insira o preço do produto em R$">
+            </div>
+
+            <div class="form-group">
+                <label for="produto">Categoria</label>
+                <select name="categoria" id="categoria" placeholder="Escolha uma categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                    <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.categoria}}</option>
+                </select>
+            </div>
+            
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-primary" (click)='publicarProduto()' data-dismiss="modal">Cadastrar Produto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  
+  <!-- Modal CATEGORIA -->
+  <div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Categorias novas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="form-group">
+                <label for="categoria">Insira um nome para a categoria</label>
+                <input [(ngModel)]='categoria.categoria' type="text" class="form-control" placeholder="Ex: Categoria A">
+            </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" (click)='cadastrarCategoria()' data-dismiss="modal">Adicionar categoria</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
