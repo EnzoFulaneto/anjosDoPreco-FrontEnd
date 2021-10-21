@@ -67,12 +67,6 @@
         Cadastrar novo produto
         </button>
 
-
-
-        <!-- Botão para acionar modal *ngIf='auth.adm()' -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#novaCategoria">
-        Cadastrar nova categoria
-        </button>
                 </div>
             </div>
         </div>
@@ -171,8 +165,12 @@
 
             <div class="form-group">
                 <label for="produto">Categoria</label>
-                <select name="categoria" id="categoria" placeholder="Escolha uma categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
-                    <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.categoria}}</option>
+                <select name="categoria" id="categoria" placeholder="Escolha uma categoria" class="form-control">
+                    <option>-- Selecione uma categoria --</option>
+                    <option value="alimento">Alimentos</option>
+                    <option value="eletrodomesticos">Eletrodomesticos</option>
+                    <option value="jogos">Jogos</option>
+                    <option value="celulares">Celulares</option>
                 </select>
             </div>
             
@@ -185,32 +183,3 @@
       </div>
     </div>
   </div>
-
- 
-  
-  <!-- Modal CATEGORIA -->
-  <div class="modal fade" id="novaCategoria" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Categorias novas</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-            <div class="form-group">
-                <label for="categoria">Insira um nome para a categoria</label>
-                <input [(ngModel)]='categoria.categoria' type="text" class="form-control" placeholder="Ex: Categoria A">
-            </div>
-
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary" (click)='cadastrarCategoria()' data-dismiss="modal">Adicionar categoria</button>
-        </div>
-      </div>
-    </div>
-  </div>
-

@@ -9,5 +9,5 @@ export class Produto{
     public foto: string
     public preco: number 
     public marca: string
-    public categoria: CategoriaModel
+    public categoria: String
 }

@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private router: Router,
-    private categoriaService: CategoriaService,
     private produtoService: ProdutoService
   ) { }
 
@@ -43,46 +42,17 @@ export class HeaderComponent implements OnInit {
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.id = this.userLogin.id
+      environment.tipo = this.userLogin.tipo
     
-
+      alert ('Você está dentro!')
       this.router.navigate (['/index'])
     }, erro => {
       if (erro.status == 500){
         alert('Usuário ou senha estão incorretos :(')
+      } else if(erro.status == 409){
+        alert('Este nome de usuário já foi utilizado, por faovr escolha outro')
       }
-    })
+      }
+    )
   }
-
-  cadastrarCategoria(){
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: CategoriaModel)=>{
-      this.categoria = resp
-      alert ("Categoria adicionada com sucesso!")
-      this.categoria = new CategoriaModel()
-    })
-  }
-
-  getAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: CategoriaModel[])=>{
-      this.listaCategoria = resp 
-    })
-  }
-
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: CategoriaModel)=>{
-      this.categoria = resp
-    })
-  }
-
-  publicarProduto(){
-    this.categoria.id = this.idCategoria
-    this.produto.categoria = this.categoria
-
-    this.produtoService.postPostagem(this.produto).subscribe((resp: Produto)=>{
-      this.produto = resp
-      alert('Produto cadastrado com sucesso!')
-      this.produto = new Produto()
-    })
-
-  }
-  
 }
