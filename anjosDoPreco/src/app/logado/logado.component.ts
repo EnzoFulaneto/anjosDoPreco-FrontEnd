@@ -19,6 +19,7 @@ import { ProdutoService } from '../service/produto.service';
 export class LogadoComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin
+  categoria: CategoriaModel = new CategoriaModel()
   produto: Produto = new Produto
   idCategoria: number
   user: Usuario = new Usuario()
