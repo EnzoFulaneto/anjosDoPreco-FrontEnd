@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="container-fluid navbar-nav d-flex justify-content-end">
                     <li class="nav-item">
-                        <a routerLink='/cadastrar' class="nav-link bts ml-1 mr-1" >Cadastrar<i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link bts ml-1 mr-1" href="#"><i class="fas fa-shopping-cart"></i> Carrinho </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bts ml-1 mr-1" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="#">Entrar <i class="fas fa-sign-in-alt"></i></a>
+                        <a class="nav-link bts ml-1 mr-1" href="#"><i class="fas fa-user-cog"></i> Perfil</a>
                     </li>
                 </ul>
         </div>
@@ -73,6 +73,9 @@
     </div>
 </div>
 
+
+
+
 <div class="container-fluid background">
         <ul class="nav justify-content-center pb-1 pt-1 mb-1  ff-b">
             <li class="nav-item">
@@ -95,46 +98,7 @@
 
 <!-- MODAL Entrar-->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content bd-radius">
-            <div class="modal-header bg-dark text-light">
-                <h1 class="text-center modal-title">Entrar <i class="fas fa-sign-in-alt"></i></h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body bg-dark text-light d-flex justify-content-center">
-                
-                <form>
-                    <div class="">
-                        
-                        <div class="form-group">
-                            <label for="usuario">Usuario</label>
-                            <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario"
-                                placeholder="Seu usuario">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha"
-                            placeholder="Sua senha">
-                        </div>
-                        
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success ml-1" (click)='entrar()'>Entrar</button>
-                        </div>
-                        
-                        <hr class="mt-5 mb-5">
-
-                        <p class="text-center">Não tem uma conta?
-                        <a routerLink = '/cadastrar'>Cadastre-se</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>        
-</div>
 
   <!-- Modal  PRODUTO-->
   <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">

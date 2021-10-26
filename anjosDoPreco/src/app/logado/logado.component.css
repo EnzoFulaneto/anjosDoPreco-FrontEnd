@@ -99,7 +99,8 @@ ul li a:hover
 }
 .f-titulo{
     background: -webkit-linear-gradient(#9795ef, #f9c5d1);
-    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
 }
 
 
