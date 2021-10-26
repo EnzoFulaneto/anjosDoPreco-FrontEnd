@@ -12,7 +12,9 @@ const routes: Routes = [
 
   {path: 'index', component: IndexComponent},
 
+  /*
   {path: 'alimentos', component:AlimentosComponent}
+  */
 ];
 
 @NgModule({

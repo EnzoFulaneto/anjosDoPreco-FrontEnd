@@ -18,12 +18,14 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class LogadoComponent implements OnInit {
 
+  nome = environment.nome
   userLogin: UserLogin = new UserLogin
   categoria: CategoriaModel = new CategoriaModel()
   produto: Produto = new Produto
   idCategoria: number
   user: Usuario = new Usuario()
   idUser = environment.id
+  listaProdutos: Produto[]
 
   constructor(
     public auth: AuthService,
@@ -52,12 +54,17 @@ export class LogadoComponent implements OnInit {
     })
   }
 
-
-  publicarProduto(){
+    publicarProduto(){
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
       alert('Produto cadastrado com sucesso!')
       this.produto = new Produto()
     })
    }
+
+   getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
+      this.listaProdutos = resp
+    })
+  }
 }

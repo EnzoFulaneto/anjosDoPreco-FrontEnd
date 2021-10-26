@@ -73,15 +73,6 @@ ul li a:hover
     background-color: #7f5a83;
     background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
 }
-/**/
-
-/*Barra de pesquisa*/
-
-/**/
-
-/*Barra de Categorias*/
-
-/*Fio*/
 
 /*Formatação*/
 .fs-25{
@@ -100,9 +91,12 @@ ul li a:hover
 .f-titulo{
     background: -webkit-linear-gradient(#9795ef, #f9c5d1);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;  
 }
 
 
 /*Fim - Formtação*/
+
+
+/**/
 

@@ -38,8 +38,7 @@ import { FooterlogadoComponent } from './footerlogado/footerlogado.component';
   ],
   providers: [{
    provide:LocationStrategy,
-   useClass:HashLocationStrategy,
- 
+   useClass:HashLocationStrategy
   }],
   bootstrap: [AppComponent]
 })

@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   userLogin: UserLogin = new UserLogin
   categoria: CategoriaModel = new CategoriaModel()
   listaCategoria: CategoriaModel[]
+  listaProdutos: Produto[]
   produto: Produto = new Produto
   idCategoria: number
   user: Usuario = new Usuario()
@@ -54,5 +55,11 @@ export class HeaderComponent implements OnInit {
       }
       }
     )
+  }
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
+      this.listaProdutos = resp
+    })
   }
 }
