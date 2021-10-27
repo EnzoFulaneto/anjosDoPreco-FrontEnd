@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AlimentosComponent } from './categorias/alimentos/alimentos.component';
 import { LogadoComponent } from './logado/logado.component';
 import { FooterlogadoComponent } from './footerlogado/footerlogado.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FooterlogadoComponent } from './footerlogado/footerlogado.component';
     FooterComponent,
     AlimentosComponent,
     LogadoComponent,
-    FooterlogadoComponent
+    FooterlogadoComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,

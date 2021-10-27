@@ -15,11 +15,12 @@ export class IndexComponent implements OnInit {
     private produtoService: ProdutoService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getAllProdutos
   }
 
   getAllProdutos(){
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
       this.listaProdutos = resp
     })
   }
