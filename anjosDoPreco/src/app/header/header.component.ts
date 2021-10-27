@@ -45,7 +45,6 @@ export class HeaderComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.tipo = this.userLogin.tipo
     
-      alert ('Você está dentro!')
       this.router.navigate (['/index'])
     }, erro => {
       if (erro.status == 500){

@@ -62,6 +62,7 @@ export class LogadoComponent implements OnInit {
     })
    }
 
+
    getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
       this.listaProdutos = resp
