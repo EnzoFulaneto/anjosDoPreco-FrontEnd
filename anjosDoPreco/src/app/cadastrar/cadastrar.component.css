@@ -4,9 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    font-family: 'Lobster', cursive;
-}
 .ajuste{
     position: absolute;
     max-width: 800px;
@@ -35,7 +32,6 @@ header{
 .RightCtn header{
     color: #fff;
     font-size: 44px;
-    font-family: 'Lobster', cursive;
 }
 
 

@@ -16,7 +16,8 @@ export class IndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getAllProdutos
+    window.scroll(0,0)
+    this.getAllProdutos()
   }
 
   getAllProdutos(){
@@ -24,9 +25,4 @@ export class IndexComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-
-  getProdutoByCategoria(){
-    
-  }
-
 }
