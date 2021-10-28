@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { AlimentosComponent } from './categorias/alimentos/alimentos.component';
 import { IndexComponent } from './index/index.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
+import { Usuario } from '../model/Usuario';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -10,9 +13,11 @@ import { ProdutoService } from '../service/produto.service';
 export class IndexComponent implements OnInit {
 
   listaProdutos: Produto[]
+  usuario: Usuario = new Usuario
+  produto: Produto = new Produto()
 
   constructor(
-    private produtoService: ProdutoService,
+    public produtoService: ProdutoService,
   ) { }
 
   ngOnInit() {
@@ -21,8 +26,32 @@ export class IndexComponent implements OnInit {
   }
 
   getAllProdutos(){
+
+    environment.categoria = this.produto.categoria
+
+
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
       this.listaProdutos = resp
     })
+  }
+
+  alimentos(){
+    let ok = false
+
+    if(this.produto.categoria == "alimento"){
+      ok = true
+    }
+
+    return ok
+  }
+
+  eletrodomesticos(){
+    let ok = false
+
+    if(this.produto.categoria == "eletrodomesticos"){
+      ok = true
+    }
+
+    return ok
   }
 }

@@ -21,7 +21,7 @@
     </div>
 
           <!--CARROSSEL-->
-          <div id="carouselExampleIndicators" class="carousel slide mb-4 container-fluid" data-ride="carousel">
+          <div id="carouselExampleIndicators" class="carousel slide mb-4" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -51,27 +51,26 @@
                 <div class="tab-pane fade show active" id="alimentos" role="tabpanel" aria-labelledby="nav-alimentos-tab"> 
                   <div class="container-fluid mt-2">
                     
-                    <h1 class="mb-4">categorias em destaque</h1>
+                    <h1 class="mb-4">Categorias em destaque</h1>
                     <div class="d-flex flex-row justify-content-center">
                        <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/6ad43c86c75d-atalho_smartphone_desk.png" alt="..." class="" width="230" height="270">
                        <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/6fe5eb2e2d21-atalho_note_app.png" alt="..." class="" width="230" height="270">
                        <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/8cd128431a99-atalho_livros_desk.png" alt="..." class="" width="230" height="270">
                        <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/b00f40c2c76f-atalho_eletro_desk.png" alt="..." class="" width="230" height="270">
                        <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/f4370c43af50-atalho_tvs_desk.png" alt="..." class="" width="230" height="270">
-                       <img src="https://images-americanas.b2w.io/spacey/acom/2021/10/27/86dbafa7ea9c-atalho_games_desk.png" alt="..." class="" width="230" height="270">
                     </div>
                   </div>
                   <br>
                   <h1 class="mt-5 text-center">Alimentos</h1>
 
-                   <div class="d-flex flex-row">
+                   <div class="d-flex flex-row" *ngIf='alimentos()'>
                       <div class="card-deck ml-2" *ngFor='let item of listaProdutos'>
 
                              <div class="card border-primary mb-3" id="cestaBasica" style="max-width: 18rem;">
                                <img class="card-img-top" src="{{item.foto}}" alt="Foto produto">
                                <div class="card-body">
                                <h5 class="card-title">{{item.produto}}</h5>
-                               <p class="card-text font-weight-bold">${{item.preco}}</p>
+                               <p class="card-text font-weight-bold">R${{item.preco}}</p>
                                <small class="text-secondary">Anjo tem 20% de desconto em produtos da cesta básica!</small>
                             </div>
 
@@ -103,7 +102,7 @@
 
                   <h1 class="mb-4 text-center">Eletrodomesticos</h1>
 
-                  <div class="d-flex flex-row">
+                  <div class="d-flex flex-row" *ngIf='eletrodomesticos()'>
                     <div class="card-deck ml-2" *ngFor='let item of listaProdutos'>
 
                            <div class="card border-primary mb-3" id="cestaBasica" style="max-width: 18rem;">

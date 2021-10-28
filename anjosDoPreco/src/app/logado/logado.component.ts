@@ -30,7 +30,8 @@ export class LogadoComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private router: Router,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
   ) { }
 
   ngOnInit() {
@@ -57,6 +58,9 @@ export class LogadoComponent implements OnInit {
     publicarProduto(){
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
+
+      environment.categoria = this.produto.categoria
+
       alert('Produto cadastrado com sucesso!')
       this.produto = new Produto()
     })
