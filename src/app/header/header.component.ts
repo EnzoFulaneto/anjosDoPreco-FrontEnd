@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -7,31 +6,28 @@ import { Produto } from '../model/Produto';
 import { UserLogin } from '../model/UserLogin';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
-import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
-
 @Component({
-  selector: 'app-logado',
-  templateUrl: './logado.component.html',
-  styleUrls: ['./logado.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class LogadoComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
-  nome = environment.nome
   userLogin: UserLogin = new UserLogin
   categoria: CategoriaModel = new CategoriaModel()
+  listaCategoria: CategoriaModel[]
+  listaProdutos: Produto[]
   produto: Produto = new Produto
   idCategoria: number
   user: Usuario = new Usuario()
   idUser = environment.id
-  listaProdutos: Produto[]
 
   constructor(
     public auth: AuthService,
     private router: Router,
-    private produtoService: ProdutoService,
-    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
@@ -45,29 +41,25 @@ export class LogadoComponent implements OnInit {
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.id = this.userLogin.id
-    
 
+      console.log(environment.token)
+      console.log(environment.nome)
+      console.log(environment.id)
+      console.log(environment.tipo)
+
+    
       this.router.navigate (['/index'])
     }, erro => {
       if (erro.status == 500){
         alert('Usuário ou senha estão incorretos :(')
+      } else if(erro.status == 409){
+        alert('Este nome de usuário já foi utilizado, por favor escolha outro')
       }
-    })
+      }
+    )
   }
 
-    publicarProduto(){
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
-      this.produto = resp
-
-      environment.categoria = this.produto.categoria
-
-      alert('Produto cadastrado com sucesso!')
-      this.produto = new Produto()
-    })
-   }
-
-
-   getAllProdutos(){
+  getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
       this.listaProdutos = resp
     })

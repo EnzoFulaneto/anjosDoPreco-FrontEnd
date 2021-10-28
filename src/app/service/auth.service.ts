@@ -13,11 +13,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   entrar (userLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>('http://localhost:8080/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('https://anjosdopreco.herokuapp.com/usuarios/logar', userLogin)
   }
   
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario)
+    return this.http.post<Usuario>('https://anjosdopreco.herokuapp.com/usuarios/cadastrar', usuario)
   } 
 
   logado() {
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   adm(){
-    let ok: boolean = false
+    let ok = false
 
     if (environment.tipo == "adm"){
       ok = true

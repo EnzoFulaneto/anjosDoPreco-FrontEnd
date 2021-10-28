@@ -18,14 +18,14 @@ export class CategoriaService {
   }
 
   getAllCategoria(): Observable<CategoriaModel[]>{
-    return this.http.get<CategoriaModel[]>('http://localhost:8080/categorias', this.token)
+    return this.http.get<CategoriaModel[]>('https://anjosdopreco.herokuapp.com/categorias', this.token)
   }
 
   getByIdCategoria(id: number): Observable<CategoriaModel>{
-    return this.http.get<CategoriaModel>(`http://localhost:8080/categorias/${id}`, this.token)
+    return this.http.get<CategoriaModel>(`https://anjosdopreco.herokuapp.com/categorias/${id}`, this.token)
   }
 
   postCategoria(categoria: CategoriaModel): Observable<CategoriaModel>{
-    return this.http.post<CategoriaModel>('http://localhost:8080/categorias', categoria, this.token)
+    return this.http.post<CategoriaModel>('https://anjosdopreco.herokuapp.com/categorias', categoria, this.token)
   }
 }

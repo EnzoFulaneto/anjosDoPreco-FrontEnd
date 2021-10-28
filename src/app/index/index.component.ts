@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
@@ -26,9 +25,6 @@ export class IndexComponent implements OnInit {
   }
 
   getAllProdutos(){
-
-    environment.categoria = this.produto.categoria
-
 
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
       this.listaProdutos = resp

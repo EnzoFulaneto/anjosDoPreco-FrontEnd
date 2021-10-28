@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
@@ -38,6 +39,9 @@ export class CadastrarComponent implements OnInit {
     } else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
+
+        environment.tipo = this.usuario.tipo
+
         this.router.navigate(['/index'])
         alert("♥ Usuario Cadastrado com Sucesso ♥")
       })
