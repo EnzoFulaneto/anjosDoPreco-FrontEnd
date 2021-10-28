@@ -1,3 +1,5 @@
+import { CategoriaModel } from "src/app/model/CategoriaModel";
+
 export const environment = {
   production: true,
   token: '',
@@ -5,5 +7,5 @@ export const environment = {
   id: 0,
   foto: '',
   documento: '',
-  tipo:''
+  tipo:'',
 };

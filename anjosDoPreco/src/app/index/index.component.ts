@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
 
@@ -10,9 +11,10 @@ import { ProdutoService } from '../service/produto.service';
 export class IndexComponent implements OnInit {
 
   listaProdutos: Produto[]
+  
 
   constructor(
-    private produtoService: ProdutoService,
+    private produtoService: ProdutoService, 
   ) { }
 
   ngOnInit() {
