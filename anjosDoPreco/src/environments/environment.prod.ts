@@ -1,4 +1,3 @@
-import { CategoriaModel } from "src/app/model/CategoriaModel";
 
 export const environment = {
   production: true,

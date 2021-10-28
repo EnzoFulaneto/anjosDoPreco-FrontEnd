@@ -21,7 +21,7 @@ export class AuthService {
   } 
 
   logado() {
-    let ok = false
+    let ok =  false
 
     if (environment.token != ''){
       ok = true
@@ -33,7 +33,7 @@ export class AuthService {
   deslogado(){
     let ok = false
 
-    if (environment.token == ''){
+    if (environment.token === ''){
       ok = true
     }
 
@@ -43,7 +43,7 @@ export class AuthService {
   adm(){
     let ok: boolean = false
 
-    if (environment.tipo != "adm"){
+    if (environment.tipo !== "adm"){
       ok = true
     }
 
